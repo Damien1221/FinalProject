@@ -10,8 +10,14 @@ public class ScoreManager : MonoBehaviour
     public GameObject Gate;
     public GameObject Gate2;
     public GameObject Gate3;
-  
+    private AudioSource _audioSource;
 
+    public AudioClip audioClip;
+
+    private void Start()
+    {
+        _audioSource = GetComponent<AudioSource>();
+    }
     private void Update()
     {
         if (ScoreDisplay == null)
@@ -23,6 +29,14 @@ public class ScoreManager : MonoBehaviour
     public void AddScore(int scoreAmount)
     {
         CurrentScore += scoreAmount;
+
+        if (ScoreDisplay != null)
+        {
+            if (_audioSource != null)
+            {
+                _audioSource.PlayOneShot(audioClip);
+            }
+        }
 
         if (CurrentScore == 1)
         {
