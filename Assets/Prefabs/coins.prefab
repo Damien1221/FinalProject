@@ -97,7 +97,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CoinAmount: 1
   DeathParticles: {fileID: 5568425845118467568, guid: 1a0a5b244de72e049806480696160c99, type: 3}
-  audioClip: {fileID: 8300000, guid: 271fa3ffc007faa4491c96334b1a26e6, type: 3}
 --- !u!82 &479719285683684812
 AudioSource:
   m_ObjectHideFlags: 0
@@ -220,7 +219,7 @@ Transform:
   m_GameObject: {fileID: 8062150527236445403}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3.984244, y: 3.984244, z: 3.984244}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8062150525368681590}
@@ -267,7 +266,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: -1511834644, guid: 156d306421001134d8d97b4756ede033, type: 3}
   m_Color: {r: 1, g: 0.8950033, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0

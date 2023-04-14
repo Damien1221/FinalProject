@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 
 public class HealthPoint : MonoBehaviour
@@ -14,8 +15,6 @@ public class HealthPoint : MonoBehaviour
     public ResetEvent OnHitReset;
     
     public GameObject DeathParticles;
-    
-
 
     public float CurrentHealth
     {

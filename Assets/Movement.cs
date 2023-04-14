@@ -45,7 +45,8 @@ public class Movement : MonoBehaviour
     protected RaycastHit2D _groundHit;
     protected RaycastHit2D _slopeHit;
 
-
+    private AudioSource _audioSource;
+    public AudioClip JumpaudioClip;
 
 
     public float _slopeAngle = 0f;
@@ -65,6 +66,8 @@ public class Movement : MonoBehaviour
 
     void Start()
     {
+        _audioSource = GetComponent<AudioSource>();
+
         _rigidbody = GetComponent<Rigidbody2D>();
 
         _health = GetComponent<HealthPoint>();
@@ -186,6 +189,7 @@ public class Movement : MonoBehaviour
         _Isjumping = true;
 
         Debug.Log("Jumping");
+        _audioSource.PlayOneShot(JumpaudioClip);
         bool reallyGround = Physics2D.Raycast(transform.position, Vector2.down, 1f, GroundLayerMask);
 
         if (reallyGround)
@@ -204,14 +208,16 @@ public class Movement : MonoBehaviour
             {
                 _rigidbody.velocity = new Vector2(Jumpforce, Jumpforce);
                 Debug.Log("Right Jump");
+                FlipAnim = false;
             }
             else if (right)
             {
                 _rigidbody.velocity = new Vector2(-Jumpforce, Jumpforce);
                 Debug.Log("Left Jump");
+                FlipAnim = true;
             }
         }
-
+        
         CoyoteTime.StopCoolDown();
 
     }

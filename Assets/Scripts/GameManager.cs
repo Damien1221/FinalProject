@@ -8,14 +8,38 @@ public class GameManager : MonoBehaviour
 {
     public string NextSceneName = "";
 
-    public void iDie(GameObject obj)
-    {
-        if(obj.name == "Player")
-        {
-            SceneManager.LoadScene(NextSceneName);
-        }
+    public AudioClip audioClip;
+    public AudioClip enemydie;
+    public float time = 3f;
 
-       Debug.Log(obj.name + " died");    
+    private AudioSource _audioSource;
+
+    private void Start()
+    {
+        _audioSource = GetComponent<AudioSource>();
     }
 
+    private IEnumerator Countdown()
+    {
+        yield return new WaitForSeconds(time);
+        Debug.Log("Loading new scene");
+        SceneManager.LoadScene(NextSceneName);
+    }
+    public void iDie(GameObject obj)
+    {
+        
+        if (obj.gameObject.CompareTag("Player"))
+        {
+            _audioSource.PlayOneShot(audioClip);
+            StartCoroutine(Countdown());
+        }
+
+        if(obj.gameObject.CompareTag("Enemy"))
+        {
+            _audioSource.PlayOneShot(enemydie);
+        }
+       
+        Debug.Log(obj.name + " died");    
+    }
+    
 }
