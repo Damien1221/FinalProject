@@ -17,5 +17,10 @@ public class GoToGame : MonoBehaviour
             SceneManager.LoadScene(NextSceneName);
         }
 
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+
     }
 }
