@@ -3197,7 +3197,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7368a342b3bc5da41b2e91269c97063f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NextSceneName: Credits
+  NextSceneName: CreditsFrog
   audioClip: {fileID: 8300000, guid: adc8174a59754dd4fad1b8a76491e18e, type: 3}
   time: 3
 --- !u!4 &1989606493

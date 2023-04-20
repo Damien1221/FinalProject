@@ -7,7 +7,6 @@ public class BackToMainMenu : MonoBehaviour
 {
     private void BackMenu()
     {
-        Input.GetKeyDown(KeyCode.M);
         SceneManager.LoadScene("MainMenu");
     }
 

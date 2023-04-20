@@ -20,6 +20,11 @@ public class GameManager : MonoBehaviour
         {
             Application.Quit();
         }
+
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            BackMenu();
+        }
     }
 
     private void Start()
@@ -32,6 +37,10 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(time);
         Debug.Log("Loading new scene");
         SceneManager.LoadScene(NextSceneName);
+    }
+    private void BackMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
     public void iDie(GameObject obj)
     {
